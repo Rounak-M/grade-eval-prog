@@ -23,3 +23,6 @@ try:
         print("Grade: C")
     else:
         print("You Failed.")
+
+except ValueError:
+    print("Invalid input. All values must be numbers.")

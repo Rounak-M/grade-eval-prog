@@ -1,18 +1,18 @@
 import sys
 
+print("DEBUG argv:", sys.argv) 
+
 try:
     if len(sys.argv) != 6:
         print("Usage: python marks.py <m1> <m2> <m3> <m4> <m5>")
         sys.exit(1)
 
-    a = int(sys.argv[1])
-    b = int(sys.argv[2])
-    c = int(sys.argv[3])
-    d = int(sys.argv[4])
-    e = int(sys.argv[5])
+    marks = [arg.strip().replace('"', '').replace("'", "") for arg in sys.argv[1:]]
 
-    avg = (a + b + c + d + e) / 5
+   
+    marks = [int(m) for m in marks]
 
+    avg = sum(marks) / 5
     print("Average of 5 subjects:", avg)
 
     if avg > 80:

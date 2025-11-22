@@ -1,7 +1,7 @@
 import sys
 
 if len(sys.argv) != 6:
-    print("Usage: python3 average.py <s1> <s2> <s3> <s4> <s5>")
+    print("Usage: python3 gradeeval.py <s1> <s2> <s3> <s4> <s5>")
     sys.exit(1)
 
 s1 = int(sys.argv[1])

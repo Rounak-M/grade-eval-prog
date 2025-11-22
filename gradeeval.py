@@ -1,8 +1,8 @@
 import sys
 
 try:
-    if len(sys.argv) != 5:
-        print("Usage: python marks.py <a> <b> <c> <d> <e>")
+    if len(sys.argv) != 6:
+        print("Usage: python marks.py <m1> <m2> <m3> <m4> <m5>")
         sys.exit(1)
 
     a = int(sys.argv[1])

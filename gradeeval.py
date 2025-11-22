@@ -1,28 +1,25 @@
 import sys
 
-print("DEBUG argv:", sys.argv) 
+if len(sys.argv) != 6:
+    print("Usage: python3 average.py <s1> <s2> <s3> <s4> <s5>")
+    sys.exit(1)
 
-try:
-    if len(sys.argv) != 6:
-        print("Usage: python marks.py <m1> <m2> <m3> <m4> <m5>")
-        sys.exit(1)
+s1 = int(sys.argv[1])
+s2 = int(sys.argv[2])
+s3 = int(sys.argv[3])
+s4 = int(sys.argv[4])
+s5 = int(sys.argv[5])
 
-    marks = [arg.strip().replace('"', '').replace("'", "") for arg in sys.argv[1:]]
+avg = (s1 + s2 + s3 + s4 + s5) / 5
+print("Average =", avg)
 
-   
-    marks = [int(m) for m in marks]
-
-    avg = sum(marks) / 5
-    print("Average of 5 subjects:", avg)
-
-    if avg > 80:
-        print("Grade: A")
-    elif 60 < avg <= 80:
-        print("Grade: B")
-    elif 40 < avg <= 60:
-        print("Grade: C")
-    else:
-        print("You Failed.")
-
-except ValueError:
-    print("Invalid input. All values must be numbers.")
+if avg >= 80:
+    print("A grade")
+elif avg >= 60:
+    print("B grade")
+elif avg >= 40:
+    print("C grade")
+elif avg >= 30:
+    print("D grade")
+else:
+    print("Fail")
